@@ -18,28 +18,42 @@ function App() {
   };
 
   function searchApi() {
-    const url = "/api/users";
-    axios.get(url)
+    const url1 = "/api/users";
+    axios.get(url1)
       .then(function (response) {
         setPerson(response.data);
-        console.log("성공");
+        console.log("GET 성공");
       })
       .catch(function (error) {
-        console.log("실패");
+        console.log("GET 실패");
       });
   }
 
-  function submitApi() {
-    const url = "/api/users"; // api 채우기
-    axios.post(url)
+  function submitApi(event) {
+    const url2 = "/api/users"; // api 채우기
+
+    if (name === "") {
+      event.preventDefault();
+      return alert("이름 쓰세요");
+    } else if (sex === "") {
+      event.preventDefault();
+      return alert("성별 쓰세요");
+
+    } else if (age === "") {
+      event.preventDefault();
+      return alert("나이 쓰세요");
+    }
+
+    axios.post(url2, { name: "", sex: "", age: "" })
       .then(function (response) {
-        setPerson(response.data);
-        console.log("성공");
+        console.log(response.data);
+        console.log("POST 성공");
       })
       .catch(function (error) {
-        console.log("실패");
+        console.log("POST 실패");
       });
   }
+
 
   if (person.length > 0) {
     return (
@@ -57,7 +71,10 @@ function App() {
         <div>
           <button onClick={searchApi}> 불러오기 </button>
         </div>
-        <form>
+        <form
+          onSubmit={submitApi}
+          encType="multipart/form-data"
+        >
           <label htmlFor="name">
             이름
           </label>

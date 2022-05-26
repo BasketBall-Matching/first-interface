@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # django rest framework
     'rest_framework',
     'corsheaders',
+    # App
+    'accounts',
 ]
 
 MIDDLEWARE = [

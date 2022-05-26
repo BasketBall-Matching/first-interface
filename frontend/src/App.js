@@ -5,7 +5,7 @@ function App() {
   let [person, setPerson] = useState([]);
 
   function searchApi() {
-    const url = "/"; // api 채우기
+    const url = "/api/users"; // api 채우기
     axios.get(url)
       .then(function (response) {
         setPerson(response.data);

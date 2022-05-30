@@ -17,7 +17,7 @@ function App() {
     setAge(event.currentTarget.value);
   };
 
-  console.log(name, sex, age);
+  // console.log(name, sex, age);
 
   function searchApi() {
     const url1 = "/api/users";
@@ -32,7 +32,7 @@ function App() {
   }
 
   const submitApi = (event) => {
-    const url2 = "/api/users"; // api 채우기
+    const url2 = "/api/users/"; // api 채우기
 
     if (name === "") {
       event.preventDefault();

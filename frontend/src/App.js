@@ -56,11 +56,32 @@ function App() {
       });
   };
 
+  const deleteApi = (event) => {
+    const url3 = "/api/users/${persons.id}/"; // api 채우기
+    axios.delete(url3, {
+      data: {
+        name: name,
+        sex: sex,
+        age: age,
+      }
+    })
+      .then(function (response) {
+        console.log(response.data);
+        console.log("DELETE 성공");
+      })
+      .catch(function (error) {
+        console.log("DELETE 실패");
+      });
+  };
+
 
   if (person.length > 0) {
     return (
       person.map(persons => (
-        <div>
+        <div id='${persons.id}'>
+          <div>
+            <button onClick={deleteApi}> DB삭제 </button>
+          </div>
           <div >{persons.name}</div>
           <div>{persons.age}</div>
           <div> {persons.sex}</div>

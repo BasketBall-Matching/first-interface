@@ -115,6 +115,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+APPEND_SLASH = False
+
 USE_TZ = True
 
 
@@ -130,5 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 추가
 CORS_ORIGIN_WHITELIST = [
-'http://localhost:3000'
+    'http://localhost:3000'
 ]

@@ -10,4 +10,4 @@ class GuestGame(models.Model):
     member = models.IntegerField()
     
     def __str__(self):
-        return '{} {}'.format(self.game_date, self.loacation)
+        return '{} {}'.format(self.game_date, self.location)

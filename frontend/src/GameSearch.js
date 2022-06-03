@@ -36,8 +36,9 @@ export default function GameSearch() {
             return (
               <div>
                 <div style={{ color: 'green' }}>
-                  <div>{game.date}</div>
-                  <div>{game.time}</div>
+                  <div>{game.host}</div>
+                  <div>{game.game_date}</div>
+                  <div>{game.game_time}</div>
                   <div>{game.location}</div>
                   <div>{game.member}</div>
                 </div>
@@ -49,8 +50,9 @@ export default function GameSearch() {
             return (
               <div>
                 <div style={{ color: 'indigo' }}>
-                  <div>{game.date}</div>
-                  <div>{game.time}</div>
+                  <div>{game.host}</div>
+                  <div>{game.game_date}</div>
+                  <div>{game.game_time}</div>
                   <div>{game.location}</div>
                   <div>{game.member}</div>
                 </div>

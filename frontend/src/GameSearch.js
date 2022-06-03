@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Input } from 'antd';
 
 export default function GameSearch() {
 
@@ -25,7 +24,7 @@ export default function GameSearch() {
 
   return (
     <div>
-      <Input
+      <input
         placeholder='검색ㄱㄱ'
         onChange={(e) => searchItems(e.target.value)}
         style={{ width: 200 }}

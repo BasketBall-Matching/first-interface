@@ -8,8 +8,9 @@ export default function GameSearch() {
   const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
-    axios.get('/games')
+    axios.get('http://localhost:8000/api/games/')
       .then((response) => {
+        console.log(response.data);
         setGameData(response.data);
       });
   }, []);
